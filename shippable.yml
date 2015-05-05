@@ -1,11 +1,18 @@
 language: java
 
+env:
+ - secure: hq3FhmafW1rLIKQBpmvhO3/xZJIqiAKQd+b2rZlzslKLyyq1aV83DUd0acwHDmqf8uwobQmCC/n3Sbz9HJHdPZjRLmErkJzcZSW/PPE2kgELVJkwKxwMK7PD3bL6023htScjtuj9xxIxrU6GhGe7qKWwjC7ERRgfxAz0S7d2wQcAkDGuaXfgdy837GASKrr9+l54MMy+KvKXvu8QoydKkACz1GMqa1vECwX+23pspnpW6bKlCx6vtMjZZZe3z+g1yieBJPLW5hUbx/Zd1VB8NdKS70TjdLjzpro4DRuGe50w7IL0Hd9SgnJdN/4j8UvWLt3boJ7Ll13JiiPoomjjYQ==
+
 jdk:
    - oraclejdk7
    - openjdk6
    - openjdk7
+   
+before_script:
+   - echo $beta 
 after_script:
   - cp README.md ./shippable
+  
 after_success:
    - mvn clean cobertura:cobertura
    - mvn test
