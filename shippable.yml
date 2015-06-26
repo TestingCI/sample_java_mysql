@@ -4,8 +4,10 @@ jdk:
    - oraclejdk7
    - openjdk6
    - openjdk7
+
 after_script:
   - cp README.md ./shippable
+
 after_success:
    - mvn clean cobertura:cobertura
    - mvn test
