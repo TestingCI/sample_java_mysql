@@ -1,4 +1,6 @@
 language: java
+
+
 jdk:
    - oraclejdk7
    - openjdk6
@@ -6,6 +8,7 @@ jdk:
 
 after_script:
   - cp README.md ./shippable
+
 
 after_success:
    - mvn clean cobertura:cobertura
